@@ -46,6 +46,9 @@ const Navbar = () => {
               <Link to="/reels" className="text-foreground/80 hover:text-primary transition-colors">
                 Reels
               </Link>
+              <Link to="/reelsupload" className="text-foreground/80 hover:text-primary transition-colors">
+                Reels Upload
+              </Link>
               <Link to="/resources" className="text-foreground/80 hover:text-primary transition-colors">
                 Resources
               </Link>
