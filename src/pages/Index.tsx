@@ -84,7 +84,11 @@ const Index = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="reveal-left">
               <div className="h-64 bg-calm-brown-light rounded-xl flex items-center justify-center">
-                <p className="text-calm-brown-dark">Illustration</p>
+                <img 
+    src="peacefulimage.jpg" 
+    alt="bg" 
+    className="h-full w-full object-cover rounded-xl" 
+    />
               </div>
             </div>
             <div className="flex flex-col justify-center reveal-right">
@@ -119,7 +123,11 @@ const Index = () => {
             </div>
             <div className="order-1 md:order-2 reveal-right">
               <div className="h-64 bg-calm-green-light rounded-xl flex items-center justify-center">
-                <p className="text-calm-green-dark">Illustration</p>
+                <img 
+    src="aiavatar.png" 
+    alt="ai tutor" 
+    className="h-full w-full object-cover rounded-xl" 
+    />
               </div>
             </div>
           </div>
