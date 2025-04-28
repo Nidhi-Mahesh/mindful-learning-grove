@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +13,7 @@ import AITutor from "./pages/AITutor";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import GlobalModals from "./components/GlobalModals";
+import Signup from "./pages/Signup";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +32,7 @@ const App = () => (
           <Route path="/games" element={<Games />} />
           <Route path="/ai-tutor" element={<AITutor />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <GlobalModals />

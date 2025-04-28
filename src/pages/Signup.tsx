@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { supabase } from '../lib/supabase';
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -21,15 +21,15 @@ const Login = () => {
     const password = formData.get('password') as string;
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signUp({
         email,
         password,
       });
 
       if (error) throw error;
 
-      toast.success("Successfully logged in!");
-      navigate('/profile');
+      toast.success("Check your email to confirm your account!");
+      navigate('/login');
     } catch (error: any) {
       toast.error(error.message);
     } finally {
@@ -42,7 +42,7 @@ const Login = () => {
       <Navbar />
       <div className="container mx-auto px-4 pt-24">
         <div className="max-w-md mx-auto bg-card rounded-lg shadow-md p-6">
-          <h1 className="text-2xl font-semibold text-center mb-6">Welcome Back</h1>
+          <h1 className="text-2xl font-semibold text-center mb-6">Create Account</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -53,13 +53,13 @@ const Login = () => {
               <Input id="password" name="password" type="password" placeholder="Enter your password" required />
             </div>
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Signing in..." : "Sign In"}
+              {isLoading ? "Creating account..." : "Sign Up"}
             </Button>
           </form>
           <p className="text-center text-sm text-muted-foreground mt-4">
-            Don't have an account?{' '}
-            <a href="/signup" className="text-primary hover:underline">
-              Sign up
+            Already have an account?{' '}
+            <a href="/login" className="text-primary hover:underline">
+              Sign in
             </a>
           </p>
         </div>
@@ -68,4 +68,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
