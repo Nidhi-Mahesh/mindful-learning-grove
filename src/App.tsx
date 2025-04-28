@@ -14,7 +14,6 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import GlobalModals from "./components/GlobalModals";
 import Signup from "./pages/Signup";
-import ChatBot from "./components/ChatBot";
 
 const queryClient = new QueryClient();
 
@@ -37,7 +36,6 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <GlobalModals />
-        <ChatBot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
