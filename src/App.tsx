@@ -11,6 +11,7 @@ import ReelUpload from "./pages/ReelUpload";
 import Resources from "./pages/Resources";
 import Games from "./pages/Games";
 import AITutor from "./pages/AITutor";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import GlobalModals from "./components/GlobalModals";
 
@@ -30,7 +31,7 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/games" element={<Games />} />
           <Route path="/ai-tutor" element={<AITutor />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <GlobalModals />

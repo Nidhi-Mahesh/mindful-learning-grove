@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +47,7 @@ const Navbar = () => {
                 Reels
               </Link>
               <Link to="/reels/upload" className="text-foreground/80 hover:text-primary transition-colors">
-                Reels Upload
+                Upload Reel
               </Link>
               <Link to="/resources" className="text-foreground/80 hover:text-primary transition-colors">
                 Resources
@@ -58,9 +58,9 @@ const Navbar = () => {
               <Link to="/ai-tutor" className="text-foreground/80 hover:text-primary transition-colors">
                 AI Tutor
               </Link>
-              <button className="btn-primary">
+              <Link to="/login" className="btn-primary">
                 Login
-              </button>
+              </Link>
             </div>
           </div>
           <div className="md:hidden">
@@ -86,6 +86,9 @@ const Navbar = () => {
             <Link to="/reels" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
               Reels
             </Link>
+            <Link to="/reels/upload" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
+              Upload Reel
+            </Link>
             <Link to="/resources" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
               Resources
             </Link>
@@ -95,9 +98,9 @@ const Navbar = () => {
             <Link to="/ai-tutor" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
               AI Tutor
             </Link>
-            <button className="w-full btn-primary mt-3">
+            <Link to="/login" className="w-full btn-primary mt-3">
               Login
-            </button>
+            </Link>
           </div>
         </div>
       )}
