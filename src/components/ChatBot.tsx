@@ -1,4 +1,4 @@
-import { getBotResponse } from '../utils/chatresponses';
+import { getBotResponse } from '../../utils/chatResponse';
 import { useState } from 'react';
 import { MessageSquare, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
