@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -26,6 +27,12 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Function to handle the external resource link
+  const handleResourceClick = (e) => {
+    e.preventDefault();
+    window.open('https://tangerine-otter-6291bc.netlify.app/', '_blank');
+  };
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4">
@@ -49,9 +56,15 @@ const Navbar = () => {
               <Link to="/reels/upload" className="text-foreground/80 hover:text-primary transition-colors">
                 Upload Reel
               </Link>
-              <Link to="/resources" className="text-foreground/80 hover:text-primary transition-colors">
+              <a 
+                href="https://tangerine-otter-6291bc.netlify.app/" 
+                onClick={handleResourceClick}
+                className="text-foreground/80 hover:text-primary transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Resources
-              </Link>
+              </a>
               <Link to="/games" className="text-foreground/80 hover:text-primary transition-colors">
                 Games
               </Link>
@@ -89,9 +102,15 @@ const Navbar = () => {
             <Link to="/reels/upload" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
               Upload Reel
             </Link>
-            <Link to="/resources" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
+            <a 
+              href="https://tangerine-otter-6291bc.netlify.app/"
+              onClick={handleResourceClick}
+              className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resources
-            </Link>
+            </a>
             <Link to="/games" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-gray-50 transition-colors">
               Games
             </Link>
