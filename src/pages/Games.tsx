@@ -11,28 +11,28 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "
 const mockGames = [
   {
     id: 1,
-    title: "Math Challenge",
-    category: "Mathematics",
+    title: "Leetcode Challenge",
+    category: "DSA",
     players: 32,
     difficultyLevel: "Beginner",
-    shortDescription: "Practice essential math concepts with interactive challenges.",
-    longDescription: "Strengthen your math fundamentals through a series of engaging quizzes and interactive problems. Progress from simple arithmetic to complex problem-solving.",
+    shortDescription: "Practice essential DSA concepts with interactive challenges.",
+    longDescription: "Strengthen your DSA fundamentals through a series of engaging quizzes and interactive problems. Progress from simple arithmetic to complex problem-solving.",
     imageClass: "bg-calm-blue-light"
   },
   {
     id: 2,
-    title: "Language Mastery",
-    category: "Languages",
+    title: "Java",
+    category: "Programming",
     players: 45,
     difficultyLevel: "Intermediate",
-    shortDescription: "Enhance vocabulary and grammar through gamified lessons.",
+    shortDescription: "Enhance programming skills through gamified lessons.",
     longDescription: "Improve your language skills through fun challenges that test vocabulary, grammar, and comprehension. Features adaptive difficulty that grows with you.",
     imageClass: "bg-calm-green-light"
   },
   {
     id: 3,
-    title: "Science Explorer",
-    category: "Science",
+    title: "Python",
+    category: "Programming",
     players: 27,
     difficultyLevel: "Advanced",
     shortDescription: "Discover scientific concepts through interactive experiments.",
@@ -41,12 +41,12 @@ const mockGames = [
   },
   {
     id: 4,
-    title: "History Timeline",
-    category: "History",
+    title: "Web Programming",
+    category: "Web Programming Language",
     players: 18,
     difficultyLevel: "Intermediate",
-    shortDescription: "Test your knowledge of historical events and figures.",
-    longDescription: "Place historical events in their correct order, match important figures to their achievements, and explore how history has shaped our modern world.",
+    shortDescription: "Test your knowledge on frontend.",
+    longDescription: "Play with webpages using css and js",
     imageClass: "bg-calm-brown-light"
   },
   {
@@ -166,7 +166,7 @@ const GameCard = ({ game }: { game: typeof mockGames[0] }) => {
 const Games = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
-  const categories = ["All", "Mathematics", "Languages", "Science", "History", "Memory Skills", "Critical Thinking"];
+  const categories = ["All", "DSA", "Java", "Python", "Web Dev", "Memory Skills", "Critical Thinking"];
   
   const filteredGames = selectedCategory && selectedCategory !== "All" 
     ? mockGames.filter(game => game.category === selectedCategory)
