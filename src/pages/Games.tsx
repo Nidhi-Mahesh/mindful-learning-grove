@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -6,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import DSALibraryQuest from '../components/DSALibraryQuest';
 
 // Mock games data
 const mockGames = [
@@ -113,14 +113,18 @@ const GameCard = ({ game }: { game: typeof mockGames[0] }) => {
           
           <div className="mt-8 space-y-6">
             {/* Game Interface */}
-            <div className="aspect-video bg-black/5 rounded-lg border border-border flex items-center justify-center">
-              <div className="text-center">
-                <div className="mb-4 text-4xl">🎮</div>
-                <p className="text-muted-foreground">Game content would load here</p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  (Unity WebGL game would be embedded in this area)
-                </p>
-              </div>
+            <div className="aspect-video bg-black/5 rounded-lg border border-border flex items-center justify-center overflow-hidden">
+              {game.title === "Leetcode Challenge" ? (
+                <DSALibraryQuest />
+              ) : (
+                <div className="text-center">
+                  <div className="mb-4 text-4xl">🎮</div>
+                  <p className="text-muted-foreground">Game content would load here</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    (Unity WebGL game would be embedded in this area)
+                  </p>
+                </div>
+              )}
             </div>
             
             {/* Game Rooms */}

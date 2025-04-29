@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Input } from '@/components/ui/input';
+import { getBotResponse } from '@/utils/chatResponses';
 
 interface Message {
   type: 'bot' | 'user';
